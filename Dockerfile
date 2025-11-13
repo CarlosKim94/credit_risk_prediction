@@ -7,8 +7,9 @@ COPY ["pyproject.toml", "uv.lock", "./"]
 
 RUN uv sync
 
-COPY ["predict.py", "model/model_depth_25_estimator_60_0.858.bin", "./"]
+COPY ["predict.py", "./"]
+COPY ["model/", "./model/"]
 
 EXPOSE 9696
 
-ENTRYPOINT ["uvicorn", "--bind=0.0.0.0:9696", "predict:app"]
+ENTRYPOINT ["/app/.venv/bin/uvicorn", "--host=0.0.0.0", "--port=9696", "predict:app"]
