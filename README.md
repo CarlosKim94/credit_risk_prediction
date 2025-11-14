@@ -43,31 +43,42 @@ This project compares multiple machine learning algorithms and evaluates their p
 - Split data into training, validation and test sets (60/20/20)
 
 ### 2. Exploratory Data Analysis (EDA)
-- Distribution and correlation analysis
-  ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+- Distribution and correlation of all features
+  ![Distribution and Correlation of All Features](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/correlation.png)
+  
+- Correlation Heatmap of all features
+  
+  ![Correlation Heatmap of All Features](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/correlation_heatmap.png)
+  
 - Distribution of the target variable (`loan_satus`)
+  
+  ![Distribution of loan_status](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/loan_status_distribution.png)
+  
 - Feature relationships with loan intent and loan status
+  
+  ![Relationship of loan intent and loan_status](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/loan_intent.png)
 
 ### 3. Model Development
-- **Baseline models:** Logistic Regression, Decision Tree  
-- **Advanced models:** Random Forest, XGBoost, Gradient Boosting  
-- Hyperparameter tuning with GridSearchCV and cross-validation
+- **Baseline models:** Logistic Regression, Random Forest 
+- Hyperparameter tuning with different ranges of estimators and depths
 
 ### 4. Evaluation
-- Metrics: Accuracy, Precision, Recall, F1-score, ROC-AUC
-- Model interpretability using Feature Importance and SHAP analysis
+- Metrics: ROC-AUC
 
 ---
 
-## Results (TO DO)
+## Results
 - The top-performing model achieved a high **ROC-AUC**, balancing precision and recall.  
-- Key predictors of default included:
-  - `loan_grade`
-  - `loan_percent_income`
-  - `cb_person_default_on_file`
-  - `loan_int_rate`
-- Feature importance analysis confirmed that both **borrower credit history** and **loan characteristics** are crucial indicators of risk.
+- Key findings:
+  - Base Logistic Regression model ROC_AUC score on validation set is 0.7617
+  - Different values of C did not show any improvement
+  - Base Logistic Regression model ROC_AUC score on set set is 0.7545
+  - Base Random Forest model ROC_AUC score on validation set is 0.8389
+    ![result](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/correlation.png)
+  - After hyper parameter tuning, the best performing Random Forest model is max_depth = 25 and n_estimator = 60, and the model is saved as 'model_depth_25_estimator_60_0.858.bin'
+  - Fine-tuned Random Forest model ROC_AUC score on test set is 0.8525
 
+- Dataset: [Kaggle – Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 ---
 
 ## Repository Structure (TO DO)
