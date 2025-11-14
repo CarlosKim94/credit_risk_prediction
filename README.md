@@ -74,46 +74,65 @@ This project compares multiple machine learning algorithms and evaluates their p
   - Different values of C did not show any improvement
   - Base Logistic Regression model ROC_AUC score on set set is 0.7545
   - Base Random Forest model ROC_AUC score on validation set is 0.8389
-    ![result](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/correlation.png)
+    ![result](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/result.png)
   - After hyper parameter tuning, the best performing Random Forest model is max_depth = 25 and n_estimator = 60, and the model is saved as 'model_depth_25_estimator_60_0.858.bin'
   - Fine-tuned Random Forest model ROC_AUC score on test set is 0.8525
 
-- Dataset: [Kaggle – Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
 ---
 
-## Repository Structure (TO DO)
+## Repository Structure
 
 ```bash
-├── app
-│   ├── css
-│   │   ├── **/*.css
-│   ├── favicon.ico
-│   ├── images
-│   ├── index.html
-│   ├── js
-│   │   ├── **/*.js
-│   └── partials/template
-├── dist (or build)
-├── node_modules
-├── bower_components (if using bower)
-├── test
-├── Gruntfile.js/gulpfile.js
+├── EDA
+│   ├── correlation.png
+│   ├── correlation_heatmap.png
+│   ├── loan_intent.png
+│   ├── loan_status_distribution.png
+│   └── result.png
+├── data
+│   └── credit_risk_dataset.csv
+├── model
+│   ├── model_depth_10_estimator_10_0.839.bin
+│   ├── model_depth_10_estimator_20_0.845.bin
+│   ├── model_depth_10_estimator_40_0.846.bin
+│   ├── model_depth_15_estimator_100_0.855.bin
+│   ├── model_depth_15_estimator_10_0.851.bin
+│   ├── model_depth_15_estimator_20_0.853.bin
+│   ├── model_depth_15_estimator_60_0.854.bin
+│   ├── model_depth_20_estimator_20_0.857.bin
+│   └── model_depth_25_estimator_60_0.858.bin
+├── Dockerfile
 ├── README.md
-├── package.json
-├── bower.json (if using bower)
-└── .gitignore
+├── client01.py
+├── credit_risk_prediction.ipynb
+├── model_training.py
+├── predict.py
+├── pyproject.toml
+└── uv.lock
 ```
 
+Jupyter Notebook for EDA, data preprocessing, model training, hyper parameter tuning
+- [credit_risk_prediction.ipynb](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/credit_risk_prediction.ipynb)
+
+Python script for data pre-processing and training
+- [model_training.py](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/model_training.py)
+  
 ---
 
-## Requirements & Dependencies (TO DO)
-**Python Version:** 3.9 or above  
+## Requirements & Dependencies
+**Python Version:** 3.12 or above  
 
-Install all dependencies:
+[Dependencies](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/pyproject.toml):
+- fastapi>=0.121.1
+- matplotlib>=3.10.7
+- numpy>=2.3.4
+- pandas>=2.3.3
+- requests>=2.32.5
+- scikit-learn>=1.7.2
+- seaborn>=0.13.2
+- uvicorn>=0.38.0
 
-```bash
-pip install -r requirements.txt
-```
+Dependencies will all be automatically installed while deploying in the Docker container in the following section
 
 ---
 ## How to Run the Project (TO DO)
@@ -145,8 +164,8 @@ jupyter notebook notebooks/Loan_Default_Prediction.ipynb
 
 ---
 
-## Acknowledgments (TO DO)
+## Acknowledgments
 
 - Dataset: [Kaggle – Credit Risk Dataset](https://www.kaggle.com/datasets/laotse/credit-risk-dataset)
-- Libraries & Tools: Python, scikit-learn, XGBoost, SHAP, Matplotlib, Seaborn
+- Libraries & Tools: Python, scikit-learn, Pandas, Seaborn, Numpy, fastAPI, uvicorn, Docker
 - Inspiration: Financial risk analytics and applied data science research in credit scoring.
