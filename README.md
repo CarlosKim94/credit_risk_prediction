@@ -35,18 +35,18 @@ This project compares multiple machine learning algorithms and evaluates their p
 
 ---
 
-## Methodology (TO DO)
+## Methodology
 
 ### 1. Data Preprocessing
 - Imputed missing values (`person_emp_length`, `loan_int_rate`)
-- Encoded categorical variables (One-Hot Encoding / Ordinal Encoding)
-- Scaled numerical features using `StandardScaler`
-- Split data into training and test sets (80/20)
+- Encoded categorical variables (DictVectorizer)
+- Split data into training, validation and test sets (60/20/20)
 
 ### 2. Exploratory Data Analysis (EDA)
 - Distribution and correlation analysis
-- Default rate by loan grade and intent
-- Feature relationships with income and credit history
+  ![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+- Distribution of the target variable (`loan_satus`)
+- Feature relationships with loan intent and loan status
 
 ### 3. Model Development
 - **Baseline models:** Logistic Regression, Decision Tree  
