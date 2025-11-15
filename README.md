@@ -203,7 +203,8 @@ source .venv/bin/activate
 python client01.py
 ```
 - Result would look like:
-![prediction_test](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/prediction_test)
+  
+![prediction_test](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/prediction_test.png)
 
 - You can make a new test data similar to `client01.py` and compare how the prediction changes
 
