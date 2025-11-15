@@ -176,7 +176,7 @@ jupyter notebook
 - Review plots, metrics, and feature importance
 - Compare model performance in the results
 
-### 6. Containerize via Docker
+### 6. Containerize and Deploy
 
 - Install [Docker](https://www.docker.com/products/docker-desktop/) in your local machine
 - Keep running Docker app in background
@@ -185,6 +185,7 @@ jupyter notebook
 docker pull python:3.12.12-bookworm
 ```
 
+- Dockerfile uses `predict.py` which deploys the app via uvicorn and FastAPI
 - Build and run the Dockerfile
 ```bash
 docker build -t credit_risk_prediction .
