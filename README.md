@@ -88,6 +88,7 @@ This project compares multiple machine learning algorithms and evaluates their p
 │   ├── correlation_heatmap.png
 │   ├── loan_intent.png
 │   ├── loan_status_distribution.png
+│   ├── prediction_test.png
 │   └── result.png
 ├── data
 │   └── credit_risk_dataset.csv
@@ -108,6 +109,7 @@ This project compares multiple machine learning algorithms and evaluates their p
 ├── model_training.py
 ├── predict.py
 ├── pyproject.toml
+├── requirements.txt
 └── uv.lock
 ```
 
