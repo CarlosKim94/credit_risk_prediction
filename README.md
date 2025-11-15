@@ -135,32 +135,78 @@ Python script for data pre-processing and training
 Dependencies will all be automatically installed while deploying in the Docker container in the following section
 
 ---
-## How to Run the Project (TO DO)
+## How to Run the Project
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/loan-default-prediction.git
-cd loan-default-prediction
+git clone git clone https://github.com/CarlosKim94/credit_risk_prediction.git
+cd credit_risk_prediction
 ```
 
-### 2. Install Dependencies
+### 2. Create Virtual Environment
+
+```bash
+pip install uv
+source .venv/bin/activate
+```
+
+To deactivate the virtual environment
+```bash
+deactivate
+```
+
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the Jupyter Notebook
+### 4. Run the Jupyter Notebook
 
 ```bash
-jupyter notebook notebooks/Loan_Default_Prediction.ipynb
+jupyter notebook
 ```
 
-### 4. Reproduce Results
+### 5. Reproduce Results
 
-- Execute all cells in order
+- Execute all cells in order in `credit_risk_prediction.ipynb` file
 - Review plots, metrics, and feature importance
-- Compare algorithm performance in the results/ folder
+- Compare model performance in the results
+
+### 6. Containerize via Docker
+
+- Install [Docker](https://www.docker.com/products/docker-desktop/) in your local machine
+- Keep running Docker app in background
+- Download the python image via:
+```bash
+docker pull python:3.12.12-bookworm
+```
+
+- Build and run the Dockerfile
+```bash
+docker build -t credit_risk_prediction .
+docker run -it --rm -p 9696:9696 credit_risk_prediction
+```
+
+### 7. Test the Loan Default Prediction Model
+
+- While Docker is still running, open a new terminal
+- Change directory to `credit_risk_prediction`
+- Activate virtual environment as in Step 2
+```bash
+source .venv/bin/activate
+```
+
+- Test the loan default prediction model with an arbitrary test data stored in `client01.py`
+```bash
+python client01.py
+```
+- Result would look like:
+![prediction_test](https://github.com/CarlosKim94/credit_risk_prediction/blob/main/EDA/prediction_test)
+
+- You can make a new test data similar to `client01.py` and compare how the prediction changes
+
 
 ---
 
